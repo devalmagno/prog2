@@ -69,3 +69,7 @@ form {
     column-gap: 1rem;
     align-items: center;
 }
+
+.question .question_two form .input_box input {
+    max-width: 12rem;
+}
