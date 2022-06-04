@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho 1 - T1</title>
+
+    <style>
+        .table_image {
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Trabalho 1 - T1</h2>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Imagem</th>
+                    <th>Modelo</th>
+                    <th>Preço</th>
+                    <th>Detalhes</th>
+                </tr>
+            </thead>
+            <tbody id="root">
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <strong>Lúcio Magno</strong>
+    </footer>
+
+    <script>
+        window.onload = () => {
+            class carro {
+                constructor(placa, imagem, modelo, preco, detalhes) {
+                    this.placa = placa;
+                    this.imagem = imagem;
+                    this.modelo = modelo;
+                    this.preco = preco;
+                    this.detalhes = detalhes;
+                }
+            }
+
+            class carroDetalhes {
+                constructor(ano, cor) {
+                    this.ano = ano;
+                    this.cor = cor;
+                }
+            }
+
+            const listaDeCarros = [];
+            listaDeCarros.push(
+                new carro('HCK-0581', 'linea.jpg', 'LINEA ESSEN.SUBLIME Dual.1.8 Flex 16V 4p', 32000, new carroDetalhes(2013, 'Prata')),
+                new carro('HCK-0581', 'linea.jpg', 'LINEA ESSEN.SUBLIME Dual.1.8 Flex 16V 4p', 32000, new carroDetalhes(2013, 'Prata')),
+                new carro('HCK-0581', 'linea.jpg', 'LINEA ESSEN.SUBLIME Dual.1.8 Flex 16V 4p', 32000, new carroDetalhes(2013, 'Prata')),
+                new carro('HCK-0581', 'linea.jpg', 'LINEA ESSEN.SUBLIME Dual.1.8 Flex 16V 4p', 32000, new carroDetalhes(2013, 'Prata')),
+                new carro('HCK-0581', 'linea.jpg', 'LINEA ESSEN.SUBLIME Dual.1.8 Flex 16V 4p', 32000, new carroDetalhes(2013, 'Prata')),
+            );
+
+            const root = document.getElementById("root");
+
+            listaDeCarros.forEach(carro => {
+                const image = document.createElement('img');
+                image.src = `assets/${carro.imagem}`;
+                
+                const elements = [
+                    tdElement(carro.placa),
+                    tdImageElement(image),
+                    tdElement(carro.modelo),
+                    tdElement(carro.preco),
+                    tdElement(carro.detalhes),
+                ]
+
+                const tr = trElement(elements);
+
+                root.appendChild(tr);
+            })
+            
+            function tdImageElement(content) {
+                const td = document.createElement('td');
+                td.appendChild(content);
+                td.classList.add('table_image');
+                return td;
+            }
+
+            function tdElement(content) {
+                const td = document.createElement('td');
+                td.innerHTML = content;
+                return td;
+            }
+
+            function trElement(content) {
+                const tr = document.createElement('tr');
+
+                content.forEach(element => {
+                    tr.appendChild(element);
+                })
+
+                return tr;
+            }
+        }
+    </script>
+</body>
+
+</html>

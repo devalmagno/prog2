@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho 1 - T1</title>
+
+    <style>
+        * {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            font-family: Helvetica, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            padding: 1rem 0;
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            position: relative;
+        }
+
+        table::before {
+            content: '';
+            width: 100%;
+            height: 0.1rem;
+            box-shadow: 0 0.1rem 0.1rem rgba(3, 3, 3, 0.3);
+
+            position: absolute;
+            bottom: 0;
+            border-radius: 0 0 50% 50%;
+        }
+
+        th {
+            color: #000;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 0.4rem .8rem;
+            font-size: 1rem;
+        }
+
+        .table_image {
+            width: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            transition: all .3s ease;
+        }
+
+        .table_image:hover {
+            transform: scale(1.8);
+        }
+
+        tbody {
+            color: #333;
+        }
+
+        .details {
+            position: relative;
+        }
+
+        .details::before {
+            content: '...';
+            width: 2rem;
+            height: 2rem;
+            box-shadow: 1px 1px 1px #0003;
+            border-radius: 4px;
+            color: #000;
+            font-weight: 700;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+
+            text-align: center;
+
+            transition: all .3s ease;
+        }
+
+        .details:hover::before {
+            background: #3333;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Trabalho 1 - T1</h2>
+    </header>
+
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Imagem</th>
+                    <th>Modelo</th>
+                    <th>Preço</th>
+                    <th>Detalhes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GXD-3134</td>
+                    <td><img src="./assets/linea.jpg" alt="linea" class="table_image"></td>
+                    <td>Stilo Dualogic 1.8 BlackMotion Flex 8V</td>
+                    <td>R$ 32000</td>
+                    <td class="details"></td>
+                </tr>
+                <tr>
+                    <td>GOQ-4398</td>
+                    <td><img src="./assets/palio.jpg" alt="palio" class="table_image"></td>
+                    <td>Palio SPORTING B.Edit. 1.6 Flex 16V 5p</td>
+                    <td>R$ 32000</td>
+                    <td class="details"></td>
+                </tr>
+                <tr>
+                    <td>HBT-0529</td>
+                    <td><img src="./assets/unoe.jpg" alt="uno economy" class="table_image"></td>
+                    <td>UNO ECONOMY 1.4 EVO Fire Flex 8V 4p</td>
+                    <td>R$ 32000</td>
+                    <td class="details"></td>
+                </tr>
+
+                <tr>
+                    <td>GPQ-4149</td>
+                    <td><img src="./assets/ducato.jpg" alt="ducato" class="table_image"></td>
+                    <td>Ducato Minibus 2.3 ME Diesel</td>
+                    <td>R$ 32000</td>
+                    <td class="details"></td>
+                </tr>
+
+                <tr>
+                    <td>GRK-1512</td>
+                    <td><img src="./assets/unow.jpg" alt="uno way" class="table_image"></td>
+                    <td>UNO WAY 1.4 EVO Dualogic Flex 8V 5p</td>
+                    <td>R$ 32000</td>
+                    <td class="details"></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </body>
+    <footer>
+        <strong>Lúcio Magno</strong>
+    </footer>
+</body>
+
+</html>
