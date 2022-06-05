@@ -87,18 +87,45 @@
                 Para a entrada “22/04/1983” deve ser escrito “22 de abril de 1983”.
             </strong>
 
-            <form>
+            <form onsubmit="formatDateAndShowInFull(event)">
                 <div class="input_box">
-                    Data: 
+                    Data:
                     <input type="date" name="data" id="date">
                 </div>
                 <input type="submit" value="Formatar Data" class="buttons">
 
-                <div class="answer"></div>
             </form>
+
+            <div class="answer"></div>
+        </div>
+
+        <div class="question question_three">
+            <strong>3. Elabore um script que leia dois números e imprima em uma tabela (gerada dinamicamente) o
+                resultado das operações aritméticas soma, produto, divisão e resto da divisão (%) entre esses números.
+                Exemplo de tabela que deve ser gerada para as entradas 2 e 1.</strong>
+            <form onsubmit="doTheOperationsAndSetTheTable(event)">
+                <div class="input_box">
+                    Primeiro Número:
+                    <input type="number" step="0.01" name="number_one" id="number_one">
+                </div>
+                <div class="input_box">
+                    Segundo Número:
+                    <input type="number" step="0.01" name="number_two" id="number_two">
+                </div>
+
+                <input type="submit" value="Montar Tabela" class="buttons">
+            </form>
+
+            <div class="answer"></div>
+        </div>
+        </div>
+
         </div>
     </div>
 
+    <footer>
+       <b>Lúcio Magno</b> 
+    </footer>
     <script src="main.js"></script>
 </body>
 
